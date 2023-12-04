@@ -1,0 +1,17 @@
+.list{
+    list-style: none;
+}
+
+.items{
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+/* .link{
+    text-decoration: none;
+    color: black;
+}
+&:hover{
+    color:brown;
+} */

@@ -1,0 +1,18 @@
+.list{
+    list-style: none;
+}
+
+.items{
+    font-weight: 500;
+    font-style: 18px;
+    margin-bottom: 10px;
+}
+
+.link{
+    text-decoration: none;
+    color: #191d1e;
+
+    &:hover{
+        color: red;
+    }
+}

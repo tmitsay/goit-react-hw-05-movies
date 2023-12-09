@@ -9,6 +9,7 @@ export const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const [isLoading, setLoading] = useState(false);
+
   useEffect(() => {
     const currentQuery = searchParams.get('query');
     if (!currentQuery) return;

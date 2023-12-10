@@ -5,7 +5,7 @@ import { getSearchByKeyword } from 'components/API/api';
 import { Loader } from 'components/Loader/loader';
 import { MoviesList } from 'components/MoviesList/moviesList';
 
-export const Movies = () => {
+const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const [isLoading, setLoading] = useState(false);
@@ -37,3 +37,5 @@ export const Movies = () => {
     </div>
   );
 };
+
+export default MoviesPage;

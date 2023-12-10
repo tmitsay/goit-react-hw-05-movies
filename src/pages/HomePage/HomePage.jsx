@@ -3,7 +3,7 @@ import { Loader } from 'components/Loader/loader';
 import { getTrending } from 'components/API/api';
 import { MoviesList } from 'components/MoviesList/moviesList';
 
-export const HomePage = () => {
+const HomePage = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -32,3 +32,5 @@ export const HomePage = () => {
     </div>
   );
 };
+
+export default HomePage;

@@ -4,7 +4,7 @@ import { getMovieDetails } from 'components/API/api';
 // import css from './moviesDetails.module.css';
 import { Loader } from 'components/Loader/loader';
 
-export const MoviesDetails = () => {
+const MoviesDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState('');
   const location = useLocation();
@@ -73,3 +73,5 @@ export const MoviesDetails = () => {
     </div>
   );
 };
+
+export default MoviesDetails;

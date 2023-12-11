@@ -4,7 +4,7 @@ import { getMovieReviews } from 'components/API/api';
 import { Loader } from 'components/Loader/loader';
 import css from './reviews.module.css';
 
-export const Reviews = () => {
+const Reviews = () => {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
   const [isLoader, setIsLoader] = useState(false);
@@ -47,3 +47,5 @@ export const Reviews = () => {
     </>
   );
 };
+
+export default Reviews;

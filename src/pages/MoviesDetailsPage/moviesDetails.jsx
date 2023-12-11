@@ -1,14 +1,19 @@
 import { useLocation, Outlet, useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getMovieDetails } from 'components/API/api';
-// import css from './moviesDetails.module.css';
 import { Loader } from 'components/Loader/loader';
+import css from './moviesDetails.module.css';
+
+const defaultImg =
+  'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700';
 
 const MoviesDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState('');
-  const location = useLocation();
   const [isLoading, setIsLoading] = useState(false);
+
+  const location = useLocation();
+  const buttonBack = location.state?.from ?? '/';
 
   useEffect(() => {
     const addMovieDetails = async () => {
@@ -27,10 +32,14 @@ const MoviesDetails = () => {
     addMovieDetails();
   }, [movieId]);
 
+  const { poster_path, original_title, genres, vote_average, overview } = movie;
+
   return (
     <div>
-      <Link to={location.state?.from ?? '/'}>
-        <button type="button">Go back</button>
+      <Link to={buttonBack}>
+        <button type="button" className={css.btn}>
+          Go back
+        </button>
       </Link>
 
       {isLoading && <Loader />}
@@ -38,33 +47,35 @@ const MoviesDetails = () => {
       <div>
         <img
           width="300px"
-          alt={movie.original_title}
-          src={
-            movie.proster_path
-              ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
-              : `http://ireland.apolllo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700`
-          }
+          alt={original_title}
+          src={`${
+            poster_path
+              ? `https://image.tmdb.org/t/p/w500/${poster_path}`
+              : defaultImg
+          }`}
         />
       </div>
       <div>
-        <h2>{movie.original_title}</h2>
-        <p>Rating: {Math.round(movie.vote_average)}</p>
+        <h2>{original_title}</h2>
+        <p>Rating: {Math.round(vote_average)}</p>
         <h2>Overview</h2>
-        <p>{movie.overview}</p>
+        <p>{overview}</p>
         <h2>Genres</h2>
-        <ul>
-          {movie.genres?.map(genre => (
-            <li key={genre.id}>{genre.name}</li>
+        <ul className={css.list}>
+          {genres?.map(genre => (
+            <li className={css.items} key={genre.id}>
+              {genre.name}
+            </li>
           ))}
         </ul>
       </div>
       <div>
         <h3>Additional information</h3>
-        <ul>
-          <li>
+        <ul className={css.list}>
+          <li className={css.link}>
             <Link to="cast">Cast</Link>
           </li>
-          <li>
+          <li className={css.link}>
             <Link to="reviews">Reviews</Link>
           </li>
         </ul>

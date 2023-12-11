@@ -16,3 +16,15 @@
         color: red;
     }
 }
+
+.btn{
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.btn:hover{
+    color:aliceblue;
+    background-color: orangered;
+}

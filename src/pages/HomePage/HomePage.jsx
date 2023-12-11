@@ -6,7 +6,6 @@ import { MoviesList } from 'components/MoviesList/moviesList';
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
 
   useEffect(() => {
     const addFilms = async () => {
@@ -14,8 +13,8 @@ const HomePage = () => {
         setLoading(true);
         const data = await getTrending('');
         setMovies(data);
-      } catch (error) {
-        setError('Sorry movies not found...');
+      } catch (e) {
+        console.log(e);
       } finally {
         setLoading(false);
       }
@@ -25,9 +24,9 @@ const HomePage = () => {
 
   return (
     <div>
-      <h1>Films</h1>
+      <h1>Trending movies</h1>
       <MoviesList movies={movies} />
-      {error && <h2>{error}</h2>}
+
       {loading && <Loader />}
     </div>
   );

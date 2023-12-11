@@ -2,17 +2,18 @@ import { useState } from 'react';
 // import { useSearchParams } from 'react-router-dom';
 import css from './form.module.css';
 
-export const FormSearch = ({ setSearchParams }) => {
+export const FormSearch = ({ onSearch }) => {
   const [query, setQuery] = useState('');
   // const [SearchParams, setSearchParams] = useSearchParams()
 
   const onInputChange = event => {
-    setQuery(event.target.value);
+    setQuery(event.target.value.toLowerCase());
   };
 
   const onSubmitForm = event => {
     event.preventDefault();
-    setSearchParams({ query });
+    onSearch(query);
+    setQuery('');
   };
 
   return (
@@ -22,9 +23,10 @@ export const FormSearch = ({ setSearchParams }) => {
         name="name"
         type="text"
         value={query}
+        placeholder="Search movies"
         onChange={onInputChange}
       />
-      <button type="button" className={css.button}>
+      <button type="submit" className={css.button}>
         Search
       </button>
     </form>

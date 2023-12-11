@@ -4,7 +4,10 @@ import { getMovieCast } from 'components/API/api';
 import { Loader } from 'components/Loader/loader';
 import css from './cast.module.css';
 
-export const Cast = () => {
+const defaultImg =
+  'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700';
+
+const Cast = () => {
   const { movieId } = useParams();
   const [isLoading, setIsLoading] = useState(false);
   const [cast, setCast] = useState([]);
@@ -38,7 +41,7 @@ export const Cast = () => {
               src={
                 profile_path
                   ? `https://image.tmdb.org/t/p/w500/${profile_path}`
-                  : `http://ireland.apolllo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700`
+                  : defaultImg
               }
             />
             <p className={css.text}>{name}</p>
@@ -49,3 +52,4 @@ export const Cast = () => {
     </div>
   );
 };
+export default Cast;

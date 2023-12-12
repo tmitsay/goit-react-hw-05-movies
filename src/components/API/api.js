@@ -9,7 +9,7 @@ export const getTrending = async() => {
 }
 
 export const getSearchByKeyword = async query => {
-    const { data } = await axios.get(`search/movie?api_key=${API_KEY}&query={query}&language=en-US&page=1&include_adult=false`)
+    const { data } = await axios.get(`search/movie?api_key=${API_KEY}&query=${query}&language=en-US&page=1&include_adult=false`)
     return data.results
 }
 

@@ -10,13 +10,13 @@ const MoviesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [isLoading, setLoading] = useState(false);
 
-  const onSubmit = query => {
-    const changeParams = query !== '' ? { query } : {};
-    setSearchParams(changeParams);
-  };
+  // const onSubmit = query => {
+  //   const changeParams = query !== '' ? { query } : {};
+  //   setSearchParams(changeParams);
+  // };
 
-  const currentKeyword = searchParams.get('query');
   useEffect(() => {
+    const currentKeyword = searchParams.get('query');
     if (!currentKeyword) return;
 
     const addMoviesByKeyword = async () => {
@@ -32,11 +32,11 @@ const MoviesPage = () => {
       }
     };
     addMoviesByKeyword();
-  }, [currentKeyword]);
+  }, [searchParams]);
 
   return (
     <div>
-      <FormSearch value={currentKeyword} onSearch={onSubmit} />
+      <FormSearch onSearch={setSearchParams} />
       {isLoading && <Loader />}
       {movies.length > 0 && <MoviesList movies={movies} />}
     </div>

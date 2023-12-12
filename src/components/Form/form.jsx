@@ -7,12 +7,12 @@ export const FormSearch = ({ onSearch }) => {
   // const [SearchParams, setSearchParams] = useSearchParams()
 
   const onInputChange = event => {
-    setQuery(event.target.value.toLowerCase());
+    setQuery(event.target.value);
   };
 
   const onSubmitForm = event => {
     event.preventDefault();
-    onSearch(query);
+    onSearch({ query });
     setQuery('');
   };
 

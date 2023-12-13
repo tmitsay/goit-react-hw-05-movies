@@ -1,5 +1,5 @@
 import { useLocation, Outlet, useParams, Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { getMovieDetails } from 'components/API/api';
 import { Loader } from 'components/Loader/Loader';
 import css from './moviesDetails.module.css';
@@ -13,7 +13,7 @@ const MoviesDetails = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const location = useLocation();
-  const buttonBack = location.state?.from ?? '/';
+  const buttonBack = useRef(location.state?.from ?? '/');
 
   useEffect(() => {
     const addMovieDetails = async () => {
@@ -36,7 +36,7 @@ const MoviesDetails = () => {
 
   return (
     <div>
-      <Link to={buttonBack}>
+      <Link to={buttonBack.current}>
         <button type="button" className={css.btn}>
           Go back
         </button>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieCast } from 'components/API/api';
-import { Loader } from 'components/Loader/loader';
+import { Loader } from 'components/Loader/Loader';
 import css from './cast.module.css';
 
 const defaultImg =

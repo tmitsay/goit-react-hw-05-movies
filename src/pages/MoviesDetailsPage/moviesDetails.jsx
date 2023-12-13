@@ -1,7 +1,7 @@
 import { useLocation, Outlet, useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getMovieDetails } from 'components/API/api';
-import { Loader } from 'components/Loader/loader';
+import { Loader } from 'components/Loader/Loader';
 import css from './moviesDetails.module.css';
 
 const defaultImg =
@@ -73,10 +73,14 @@ const MoviesDetails = () => {
         <h3>Additional information</h3>
         <ul className={css.list}>
           <li className={css.link}>
-            <Link to="cast">Cast</Link>
+            <Link to="cast" state={{ from: location }}>
+              Cast
+            </Link>
           </li>
           <li className={css.link}>
-            <Link to="reviews">Reviews</Link>
+            <Link to="reviews" state={{ from: location }}>
+              Reviews
+            </Link>
           </li>
         </ul>
       </div>

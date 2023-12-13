@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Loader } from 'components/Loader/loader';
+import { Loader } from 'components/Loader/Loader';
 import { getTrending } from 'components/API/api';
-import { MoviesList } from 'components/MoviesList/moviesList';
+import { MoviesList } from 'components/MoviesList/MoviesList';
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);

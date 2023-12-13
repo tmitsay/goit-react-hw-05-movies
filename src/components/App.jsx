@@ -5,7 +5,7 @@ import { lazy } from 'react';
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 const MoviesPage = lazy(() => import('../pages/MoviesPage/MoviesPage'));
 const MoviesDetails = lazy(() =>
-  import('../pages/MoviesDetailsPage/MoviesDetails')
+  import('../pages/MoviesDetailsPage/MoviesDetailsPage')
 );
 const Cast = lazy(() => import('./Cast/CastMovies'));
 const Reviews = lazy(() => import('./Reviews/ReviewsMovies'));

@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/910.356f3e68.chunk.css","mappings":"AAAA,kBACI,eACJ,CAEA,kBAEI,cAAe,CADf,eAAgB,CAEhB,kBACJ","sources":["components/Cast/cast.module.css"],"sourcesContent":[".list{\n    list-style: none;\n}\n\n.text{\n    font-weight: 500;\n    font-size: 18px;\n    margin-bottom: 10px;\n}"],"names":[],"sourceRoot":""}

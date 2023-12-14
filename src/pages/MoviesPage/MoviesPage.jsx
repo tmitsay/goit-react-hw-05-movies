@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { FormSearch } from 'components/Form/Form';
+import { FormSearch } from 'components/Form/FormSearch';
 import { getSearchByKeyword } from 'components/API/api';
-import { Loader } from 'components/Loader/Loader';
+import { Loader } from 'components/Loader/LoaderCircles';
 import { MoviesList } from 'components/MoviesList/MoviesList';
 
 const MoviesPage = () => {

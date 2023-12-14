@@ -1,9 +1,9 @@
 import { Suspense } from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
-import { Loader } from 'components/Loader/Loader';
+import { Loader } from 'components/Loader/LoaderCircles';
 import css from './layout.module.css';
 
- const Layout = () => {
+const Layout = () => {
   return (
     <div className={css.container}>
       <header className={css.header}>
@@ -28,4 +28,4 @@ import css from './layout.module.css';
   );
 };
 
-export default Layout
+export default Layout;

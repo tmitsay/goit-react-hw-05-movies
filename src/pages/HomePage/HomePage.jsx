@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Loader } from 'components/Loader/Loader';
+import { Loader } from 'components/Loader/LoaderCircles';
 import { getTrending } from 'components/API/api';
 import { MoviesList } from 'components/MoviesList/MoviesList';
 

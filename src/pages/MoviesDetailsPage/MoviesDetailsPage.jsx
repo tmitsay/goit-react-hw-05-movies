@@ -1,7 +1,7 @@
 import { useLocation, Outlet, useParams, Link } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import { getMovieDetails } from 'components/API/api';
-import { Loader } from 'components/Loader/Loader';
+import { Loader } from 'components/Loader/LoaderCircles';
 import css from './moviesDetails.module.css';
 
 const defaultImg =

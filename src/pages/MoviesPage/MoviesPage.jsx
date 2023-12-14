@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { FormSearch } from 'components/Form/FormSearch';
 import { getSearchByKeyword } from 'components/API/api';
 import { Loader } from 'components/Loader/LoaderCircles';
-import { MoviesList } from 'components/MoviesList/MoviesList';
+import { MoviesList } from 'components/MoviesList/MoviesLists';
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
